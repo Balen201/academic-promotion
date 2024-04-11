@@ -2,7 +2,6 @@
 
 @section('content')
 
-<pre>{{ json_encode($completeUsersArray, JSON_PRETTY_PRINT) }}</pre>
 
 
 
@@ -37,7 +36,7 @@
 
                     @endif
                 </td>
-                <td><a href="{{ route('kalle', ['userId' => $item->id]) }}" class="btn btn-primary">View Data</a></td>
+                <td><a href="{{ route('pending', ['userId' => $item->id]) }}" class="btn btn-primary">View Data</a></td>
 
             </tr>
             @endforeach

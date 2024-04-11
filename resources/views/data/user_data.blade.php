@@ -2,8 +2,8 @@
 
 @section('content')
 
-<pre>{{ json_encode($completeUsersArray, JSON_PRETTY_PRINT) }}</pre>
 
+@foreach ($completeUsersArray as $user)
 
 <div class="mx-auto w-100 mb-6">
     <!-- admin/view_user.blade.php -->
@@ -505,5 +505,6 @@
 </table>
 
 
+@endforeach
 
 @endsection

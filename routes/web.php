@@ -22,6 +22,40 @@ Route::get('/dashboard', function () {
 
 Route::middleware(['auth'])->group(function () {
     Route::get('/dash', [AdminController::class, 'index'])->name('admin.index');
+
+
+
+
+
+    Route::get('/showtime', [AdminController::class, 'form'])->name('form');
+    Route::get('/home/data', [AdminController::class, 'datas'])->name('homedash');
+    Route::get('/user/data', [AdminController::class, 'userdata'])->name('userdata');
+    Route::get('/user/form', [AdminController::class, 'dawakari'])->name('userform');
+    Route::get('/user/data/{userId}', [AdminController::class, 'viewUser'])->name('pending');
+    Route::get('/form/reject', [AdminController::class, 'rejectedUsers'])->name('userrejected');
+    Route::get('/accept/users', [AdminController::class, 'acceptedUsers'])->name('qbull');
+
+    Route::post('/toggle-status/{id}', 'YourController@toggleStatus')->name('toggleStatus');
+    Route::post('/accept/form/{id}', [AdminController::class , 'acceptStatus'])->name('acceptStatus');
+    Route::post('/user/sate/{id}', [AdminController::class , 'rejectStatus'])->name('rejectStatus');
+
+
+
+    Route::get('/contacts', [AdminController::class, 'dawakaryakan'])->name('dawakaryakan');
+    Route::get('/contacts/data', [AdminController::class, 'dawakarGet'])->name('dawakaryakan.get');
+
+
+
+
+
+
+
+
+
+
+
+
+
 });
 
 
@@ -31,31 +65,6 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
-
-
-
-
-
-Route::get('/showtime', [AdminController::class, 'form'])->name('form');
-Route::get('/home/data', [AdminController::class, 'datas'])->name('homedash');
-Route::get('/user/data', [AdminController::class, 'userdata'])->name('userdata');
-Route::get('/user/form', [AdminController::class, 'dawakari'])->name('userform');
-Route::get('/user/data/{userId}', [AdminController::class, 'viewUser'])->name('kalle');
-//Route::get('/reject/forms', [AdminController::class, 'rejection'])->name('rejected');
-Route::get('/form/reject', [AdminController::class, 'rejectedUsers'])->name('userrejected');
-Route::get('/nva/gyan/{userId}', [AdminController::class, 'viewlosers'])->name('nva');
-Route::get('/accept/users', [AdminController::class, 'acceptedUsers'])->name('qbull');
-Route::get('/shayma/jyan/{userId}', [AdminController::class, 'winners'])->name('sana');
-
-Route::post('/toggle-status/{id}', 'YourController@toggleStatus')->name('toggleStatus');
-Route::post('/accept/form/{id}', [AdminController::class , 'acceptStatus'])->name('acceptStatus');
-Route::post('/user/sate/{id}', [AdminController::class , 'rejectStatus'])->name('rejectStatus');
-
-
-
-Route::get('/contacts', [AdminController::class, 'dawakaryakan'])->name('dawakaryakan');
-Route::get('/contacts/data', [AdminController::class, 'dawakarGet'])->name('dawakaryakan.get');
-
 
 
 

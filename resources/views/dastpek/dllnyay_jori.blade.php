@@ -40,7 +40,7 @@
                     <div class="invalid-feedback">Please choose a file for Feedback Qutabi.</div>
                 </div>
 
-                <button type="submit" class="btn btn-primary">Bro Rezlenan</button>
+                <button type="submit" class="btn btn-primary">next</button>
             </form>
         </div>
     </div>

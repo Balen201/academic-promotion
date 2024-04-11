@@ -2,24 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\andam;
-use App\Models\blawkrawa;
-use App\Models\chalakidw;
-use App\Models\chalakise;
-use App\Models\chalakiyak;
+
 use App\Models\Contact;
-use App\Models\dllnyaJor;
-use App\Models\feedback;
-use App\Models\Personaldw;
-use App\Models\PersonDetailf;
-use App\Models\rezlenan;
-use App\Models\TwezhinawaYak;
-use App\Models\TwezhinawDw;
+
 use App\Models\User;
-use App\Models\Xwendnchar;
-use App\Models\Xwendndw;
-use App\Models\XwendnOne;
-use App\Models\XwendnSe;
+
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Cache;
 class AdminController extends Controller
@@ -27,18 +14,13 @@ class AdminController extends Controller
 
     public function index(){
 
-return view('admin.index');
+return view('admin.body');
 
 
     }
 
 
-    public function form(){
 
-        return view('data.form');
-
-
-            }
 
 
             public function userdata(){
@@ -147,23 +129,6 @@ public function acceptedUsers() {
 }
 
 
-public function winners($userId){
-
-    $user = User::findOrFail($userId);
-    return view('data.accepted_data', ['user' => $user]);
-
-
-}
-
-
-
-public function viewlosers($userId){
-
-    $user = User::findOrFail($userId);
-    return view('data.rejected_data', ['user' => $user]);
-
-
-}
 
 
 

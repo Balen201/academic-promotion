@@ -23,7 +23,7 @@
                 </div>
 
                 <div class="mb-3 text-center">
-                    <button type="submit" class="btn btn-primary">Bro goh</button>
+                    <button type="submit" class="btn btn-primary">next</button>
                 </div>
             </form>
         </div>

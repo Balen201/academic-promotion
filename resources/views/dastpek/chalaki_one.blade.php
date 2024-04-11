@@ -50,7 +50,7 @@
                     <input type="file" name="farmani_zanko" class="form-control">
                     <div class="invalid-feedback">Please fill out this field.</div>
                 </div>
-                <button type="submit" class="btn btn-primary">Go bruh</button>
+                <button type="submit" class="btn btn-primary">next</button>
             </form>
         </div>
     </div>

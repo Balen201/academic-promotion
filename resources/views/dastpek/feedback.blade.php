@@ -17,7 +17,7 @@
                 </div>
 
                 <div class="mb-3 text-center">
-                    <button type="submit" class="btn btn-primary">Done Bro</button>
+                    <button type="submit" class="btn btn-primary">submit</button>
                 </div>
             </form>
         </div>
