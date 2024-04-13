@@ -14,14 +14,20 @@
                 <div class="mb-4">
                     <label class="form-label mb-2">پسپۆری گشتی:</label>
                     <input type="text" name="pspori_gshti" class="form-control mb-2">
-                    <div class="invalid-feedback">Please fill out this field.</div>
+                    <div class="invalid-feedback">تکایە ئەم بەشە پڕکەوە</div>
                 </div>
                 <div class="mb-4">
                     <label class="form-label mb-2">پسپۆری وورد:</label>
                     <input type="text" name="pspori_wrd" class="form-control mb-2">
-                    <div class="invalid-feedback">Please fill out this field.</div>
+                    <div class="invalid-feedback">تکایە ئەم بەشە پڕکەوە</div>
                 </div>
-                <button type="submit" id="submitButton" class="btn btn-primary">Click</button>
+                <div class="row justify-content-center">
+                    <div class="col-md-6 text-center">
+                        <button type="submit" id="submitButton" class="btn btn-primary">هەنگاوی دواتر</button>
+                    </div>
+                </div>
+
+
             </form>
         </div>
     </div>

@@ -5,42 +5,47 @@
 <div class="container-lg bg-gray-100">
     <div class="container d-flex justify-content-center align-items-center vh-100">
         <div class="card w-50 p-4 rounded shadow">
-            <h2 class="text-center mb-4">زهیان خئبا کئژای سژسژس سهسه سۆاا</h2>
+            <h2 class="text-center mb-4">ئەنجامەکانی دڵنیایی جۆری بۆ ژمارەی ساڵی پێویست بۆ ئەم بەرزکردنەوەیە</h2>
 
             <form id="myForm" action="{{ route('post.jori') }}" method="post" enctype="multipart/form-data" class="needs-validation" novalidate>
                 @csrf
 
                 <div class="mb-3">
-                    <label for="sall" class="form-label">Sall:</label>
+                    <label for="sall" class="form-label">ساڵ</label>
                     <input type="text" name="sall" class="form-control border border-secondary" required>
                     <div class="invalid-feedback">Please provide a value for Sall.</div>
                 </div>
 
                 <div class="mb-3">
-                    <label for="hagbay_mamosta" class="form-label">Hagbay Mamosta:</label>
+                    <label for="hagbay_mamosta" class="form-label">هەگبەی مامۆستا</label>
                     <input type="text" name="hagbay_mamosta" class="form-control border border-secondary" required>
                     <div class="invalid-feedback">Please provide a value for Hagbay Mamosta.</div>
                 </div>
 
                 <div class="mb-3">
-                    <label for="zanstxwazi_bardawam" class="form-label">Zanstxwazi Bardawam:</label>
+                    <label for="zanstxwazi_bardawam" class="form-label">زانستخوازی بەردەوام</label>
                     <input type="text" name="zanstxwazi_bardawam" class="form-control border border-secondary" required>
                     <div class="invalid-feedback">Please provide a value for Zanstxwazi Bardawam.</div>
                 </div>
 
                 <div class="mb-3">
-                    <label for="daranjami_gshti" class="form-label">Daranjami Gshti:</label>
+                    <label for="daranjami_gshti" class="form-label">دەرەنجامی گشتی</label>
                     <input type="file" name="daranjami_gshti" class="form-control border border-secondary" required>
                     <div class="invalid-feedback">Please choose a file for Daranjami Gshti.</div>
                 </div>
 
                 <div class="mb-3">
-                    <label for="feedback_qutabi" class="form-label">Feedback Qutabi:</label>
+                    <label for="feedback_qutabi" class="form-label">فیدباکی قوتابی</label>
                     <input type="file" name="feedback_qutabi" class="form-control border border-secondary" required>
                     <div class="invalid-feedback">Please choose a file for Feedback Qutabi.</div>
                 </div>
 
-                <button type="submit" class="btn btn-primary">next</button>
+                <div class="row justify-content-center">
+                    <div class="col-md-6 text-center">
+                        <button type="submit" id="submitButton" class="btn btn-primary">هەنگاوی دواتر</button>
+                    </div>
+                </div>
+
             </form>
         </div>
     </div>

@@ -12,25 +12,26 @@
             <div class="col-md-6 mb-3 my-4 ">
                 <label for="name" class="form-label">ناوی داواکار:</label>
                 <input type="text" class="form-control" name="name" required>
-                <small class="text-danger error-message" style="display:none;">Name is required</small>
+                <small class="text-danger error-message" style="display:none;">تکایە ئەم بەشە پڕکەوە</small>
             </div>
 
             <div class="col-md-6 mb-3 my-4 ">
                 <label for="college" class="form-label">کۆلیژ:</label>
                 <input type="text" class="form-control" name="college" required>
-                <small class="text-danger error-message" style="display:none;">College is required</small>
+                <small class="text-danger error-message" style="display:none;">تکایە ئەم بەشە پڕکەوە</small>
+
             </div>
 
             <div class="col-md-6 mb-3">
                 <label for="department" class="form-label">بەش (لق):</label>
                 <input type="text" class="form-control" name="department" required>
-                <small class="text-danger error-message" style="display:none;">Department is required</small>
+                <small class="text-danger error-message" style="display:none;">تکایە ئەم بەشە پڕکەوە</small>
             </div>
 
             <div class="col-md-6 mb-3">
                 <label for="number" class="form-label">ژ.مۆبایل:</label>
                 <input type="number" class="form-control" name="number" required>
-                <small class="text-danger error-message" style="display:none;">Number is required</small>
+                <small class="text-danger error-message" style="display:none;">تکایە ئەم بەشە پڕکەوە</small>
             </div>
 
 
@@ -41,39 +42,41 @@
 
 
             <div class="col-md-6 mb-3">
-                <label for="play_zansti" class="form-label">پلە ی زانستی ئێستای:</label>
+                <label for="play_zansti" class="form-label">پلەی زانستی ئێستات:</label>
                 <select class="form-select" name="play_zansti" required>
-                    <option value="">Select</option>
-                    <option value="Mamostay Yaridadar">Mamostay Yaridadar</option>
-                    <option value="Mamosa">Mamosa</option>
-                    <option value="Profisor Yaridadar">Profisor Yaridadar</option>
-                    <option value="Profisor">Profisor</option>
+                    <option value="">پلەیەک هەڵبژێرە</option>
+                    <option value="Mamostay Yaridadar">مامۆستای یاریدەدەر</option>
+                    <option value="Mamosa">مامۆستا</option>
+                    <option value="Profisor Yaridadar">پرۆفیسۆری یاریدەدەر</option>
+                    <option value="Profisor">پرۆفیسۆر</option>
                 </select>
-                <small class="text-danger error-message" style="display:none;">Play Zansti is required</small>
+                <small class="text-danger error-message" style="display:none;">تکایە ئەم بەشە پڕکەوە</small>
             </div>
 
             <div class="col-md-6 mb-3">
-                <label for="play_dawakraw" class="form-label">ئە و پلە زانستیەی داوای دەکا</label>
+                <small class="text-danger error-message" style="display:none;">تکایە ئەم بەشە پڕکەوە</small>
                 <select class="form-select" name="play_dawakraw" required>
-                    <option value="">Select</option>
-                    <option value="Mamostay Yaridadar">Mamostay Yaridadar</option>
-                    <option value="Mamosa">Mamosa</option>
-                    <option value="Profisor Yaridadar">Profisor Yaridadar</option>
-                    <option value="Profisor">Profisor</option>
+                    <option value="">پلەیەک هەڵبژێرە</option>
+                    <option value="Mamostay Yaridadar">مامۆستای یاریدەدەر</option>
+                    <option value="Mamosa">مامۆستا</option>
+                    <option value="Profisor Yaridadar">پرۆفیسۆری یاریدەدەر</option>
+                    <option value="Profisor">پرۆفیسۆر</option>
                 </select>
-                <small class="text-danger error-message" style="display:none;">Play Dawakraw is required</small>
+                <small class="text-danger error-message" style="display:none;">تکایە ئەم بەشە پڕکەوە</small>
             </div>
 
             <div class="col-md-6 mb-3">
                 <label for="address" class="form-label">ناونیشان :</label>
                 <input type="text" class="form-control" name="address" required>
-                <small class="text-danger error-message" style="display:none;">Address is required</small>
+                <small class="text-danger error-message" style="display:none;">تکایە ئەم بەشە پڕکەوە</small>
+
             </div>
 
             <div class="col-md-6 mb-3">
                 <label for="barwar" class="form-label">بە رواری داواکردن (رۆژی تە سلیمکردنی ئە م ده فتە ره بە سە رۆکی بە ش):</label>
                 <input type="date" class="form-control" name="barwar" required>
-                <small class="text-danger error-message" style="display:none;">Barwar is required</small>
+                <small class="text-danger error-message" style="display:none;">تکایە ئەم بەشە پڕکەوە</small>
+
             </div>
 
 
@@ -87,9 +90,12 @@
 
 
 
- <div class="col-12 m-3 text-center">
-                <button type="submit" id="submitButton" class="btn btn-primary">Submit</button>
+            <div class="row justify-content-center">
+                <div class="col-md-6 text-center">
+                    <button type="submit" id="submitButton" class="btn btn-primary">هەنگاوی دواتر</button>
+                </div>
             </div>
+
 
         </form>
     </div>

@@ -11,6 +11,8 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rules;
 use Illuminate\View\View;
+use Illuminate\Support\Facades\Session;
+
 
 class RegisteredUserController extends Controller
 {
@@ -33,7 +35,7 @@ class RegisteredUserController extends Controller
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users,email'],
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
-            'department' => ['required', 'string', 'in:it,cs,se'],
+            'department' => ['required', 'string', 'in:bi,ch,ma,ph,cs,zh,ji'],
         ]);
 
         $user = new User([
@@ -45,15 +47,27 @@ class RegisteredUserController extends Controller
 
         // Generate user ID based on department
         switch ($request->department) {
-            case 'it':
-                $prefix = 'IT';
+            case 'bi':
+                $prefix = 'BI';
                 break;
-            case 'cs':
-                $prefix = 'CS';
+            case 'ch':
+                $prefix = 'CH';
                 break;
-            case 'se':
-                $prefix = 'SE';
+            case 'ma':
+                $prefix = 'MA';
                 break;
+                 case 'ph':
+                    $prefix = 'PH';
+                    break;
+                    case 'cs':
+                        $prefix = 'CS';
+                        break;
+                        case 'zh':
+                            $prefix = 'ZH';
+                            break;
+                            case 'ji':
+                                $prefix = 'JI';
+                                break;
             default:
                 $prefix = '';
         }
@@ -62,8 +76,12 @@ class RegisteredUserController extends Controller
         $user->username = $prefix . $randomNumber;
 
         $user->save();
+   // Store the generated username in session
+   Session::put('generated_username', $user->username);
 
-        return redirect()->route('dashboard');
+
+   return redirect()->route('login');
+        //return redirect()->route('dashboard');
     }
 
 

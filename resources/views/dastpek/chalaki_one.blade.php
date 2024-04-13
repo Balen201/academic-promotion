@@ -6,7 +6,7 @@
     <div class="d-flex justify-content-center align-items-center min-vh-100">
         <div class="w-50 bg-white p-4 rounded shadow">
 
-            <h2 class="text-center mb-4">سەربورده یخوێندن (بەدوا شوێن دەسپێبکە )</h2>
+            <h2 class="text-center mb-4">سەربوردەی خوێندن (بەدوا شوێن دەسپێبکە )</h2>
 
             <form id="myForm" action="{{ route('xwendn.one') }}" method="POST" enctype="multipart/form-data">
                 @csrf
@@ -50,7 +50,12 @@
                     <input type="file" name="farmani_zanko" class="form-control">
                     <div class="invalid-feedback">Please fill out this field.</div>
                 </div>
-                <button type="submit" class="btn btn-primary">next</button>
+                <div class="row justify-content-center">
+                    <div class="col-md-6 text-center">
+                        <button type="submit" id="submitButton" class="btn btn-primary">هەنگاوی دواتر</button>
+                    </div>
+                </div>
+
             </form>
         </div>
     </div>

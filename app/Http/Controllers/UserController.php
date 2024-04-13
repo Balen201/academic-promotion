@@ -528,8 +528,8 @@ $com->user_id =$id;
 $com ->comment = $request->comment;
 $com->save();
 
-
-    return view('dashboard');
+session()->flash('success', 'داواکاریەکەت بەرزکرایەوە تکایە چاوەڕێکە لە رێگای ئیمەیڵ وەڵام وەردەگریتەوە');
+return redirect()->route('dashboard');
 }
 
 
