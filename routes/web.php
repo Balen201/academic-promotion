@@ -74,43 +74,49 @@ Route::middleware('auth')->group(function () {
 
 
 
-Route::middleware(['auth'])->group(function () {
-    Route::get('/user/logout', 'UserController@destroy')->name('user.logout');
-    Route::get('/personal/step/one', 'UserController@show')->name('personal.showone');
-    Route::get('/personal/step/yakwniw', 'UserController@getdwam');
-    Route::post('/personal/step/yakwniw', 'UserController@storeone')->name('personal.storeone');
-    Route::get('/personal/step/two', 'UserController@persontwo')->name('chalaki.one');
-    Route::post('/personal/step/two', 'UserController@storedw')->name('dwam.store');
-    Route::post('/personal/step/three', 'UserController@xwendn')->name('xwendn.one');
-    Route::get('/personal/step/three', 'UserController@xwendnn')->name('xwendn.getse');
-    Route::post('/personal/step/four', 'UserController@xwendndw')->name('xwendn.dw');
-    Route::get('/personal/step/four', 'UserController@xwendndww')->name('xwendn.get');
-    Route::post('/personal/step/five', 'UserController@xwendnse')->name('store.third');
-    Route::get('/personal/step/five', 'UserController@xwendnsee')->name('get.third');
-    Route::post('/personal/step/six', 'UserController@xwendnchar')->name('store.five');
-    Route::get('/personal/step/six', 'UserController@xwendncharr')->name('get.five');
-    Route::post('/personal/step/seven', 'UserController@xwendnfive')->name('store.six');
-    Route::get('/personal/step/seven', 'UserController@xwendnfivee')->name('get.six');
-    Route::post('/personal/step/eight', 'UserController@xwendnsix')->name('post.seven');
-    Route::get('/personal/step/eight', 'UserController@xwendnsixx')->name('get.seven');
-    Route::post('/personal/step/nine', 'UserController@dllnyajor')->name('post.jori');
-    Route::get('/personal/step/nine', 'UserController@dllnyajorr')->name('get.jori');
-    Route::post('/personal/step/ten', 'UserController@rezlenan')->name('rezlenan.post');
-    Route::get('/personal/step/ten', 'UserController@rezlenann')->name('rezlenan.get');
-    Route::post('/personal/step/eleven', 'UserController@blawkrdnawa')->name('blawkrdnawa');
-    Route::get('/personal/step/eleven', 'UserController@blawkrdnawaa')->name('blawkrdnawa.get');
-    Route::post('/personal/step/twelve', 'UserController@chalakiyak')->name('chalaki.store');
-    Route::get('/personal/step/twelve', 'UserController@chalakiyakk')->name('chalakk.get');
-    Route::post('/personal/step/thirteen', 'UserController@chalakidwam')->name('chalaki.dw');
-    Route::get('/personal/step/thirteen', 'UserController@chalakidwamm')->name('get.thirteen');
-    Route::post('/personal/step/fourteen', 'UserController@chalakise')->name('chalaki.se');
-    Route::get('/personal/step/fourteen', 'UserController@chalakisee')->name('get.se');
-    Route::post('/personal/step/fifteen', 'UserController@andam')->name('andam.store');
-    Route::get('/personal/step/fifteen', 'UserController@andamm')->name('get.andam');
-    Route::post('/personal/step/sixteen', 'UserController@feedback')->name('feedback');
-    Route::get('/contact/form', 'UserController@contact')->name('contact');
-    Route::post('/contact/form', 'UserController@contactStore')->name('contact.store');
+
+
+Route::controller(UserController::class)->group(function(){
+
+Route::get('/user/logout' , 'destroy')->name('user.logout');
+Route::get('/personal/step/one' , 'show')->name('personal.showone');
+Route::get('/personal/step/yakwniw' , 'getdwam');
+Route::post('/personal/step/yakwniw' , 'store')->name('personal.storeone');
+Route::get('/personal/step/two' , 'persontwo')->name('chalaki.one');
+Route::post('/personal/step/two' , 'storedw')->name('dwam.store');
+Route::post('/personal/step/three' , 'xwendn')->name('xwendn.one');
+Route::get('/personal/step/three' , 'xwendnn')->name('xwendn.getse');
+Route::post('/personal/step/four' , 'xwendndw')->name('xwendn.dw');
+Route::get('/personal/step/four' , 'xwendndww')->name('xwendn.get');
+Route::post('/personal/step/five' , 'xwendnse')->name('store.third');
+Route::get('/personal/step/five' , 'xwendnsee')->name('get.third');
+Route::post('/personal/step/six' , 'xwendnchar')->name('store.five');
+Route::get('/personal/step/six' , 'xwendncharr')->name('get.five');
+Route::post('/personal/step/seven' , 'xwendnfive')->name('store.six');
+Route::get('/personal/step/seven' , 'xwendnfivee')->name('get.six');
+Route::post('/personal/step/eight' , 'xwendnsix')->name('post.seven');
+Route::get('/personal/step/eight' , 'xwendnsixx')->name('get.seven');
+Route::post('/personal/step/nine' , 'dllnyajor')->name('post.jori');
+Route::get('/personal/step/nine' , 'dllnyajorr')->name('get.jori');
+Route::post('/personal/step/ten' , 'rezlenan')->name('rezlenan.post');
+Route::get('/personal/step/ten' , 'rezlenann')->name('rezlenan.get');
+Route::post('/personal/step/eleven' , 'blawkrdnawa')->name('blawkrdnawa');
+Route::get('/personal/step/eleven' , 'blawkrdnawaa')->name('blawkrdnawa.get');
+Route::post('/personal/step/twelve' , 'chalakiyak')->name('chalaki.store');
+Route::get('/personal/step/twelve' , 'chalakiyakk')->name('chalakk.get');
+Route::post('/personal/step/thirteen' , 'chalakidwam')->name('chalaki.dw');
+Route::get('/personal/step/thirteen' , 'chalakidwamm')->name('get.thirteen');
+Route::post('/personal/step/fourteen' , 'chalakise')->name('chalaki.se');
+Route::get('/personal/step/fourteen' , 'chalakisee')->name('get.se');
+Route::post('/personal/step/fifteen' , 'andam')->name('andam.store');
+Route::get('/personal/step/fifteen' , 'andamm')->name('get.andam');
+Route::post('/personal/step/sixteen' , 'feedback')->name('feedback');
+Route::get('/contact/form' , 'contact')->name('contact');
+Route::post('/contact/form' , 'contactStore')->name('contact.store');
+
+
 });
+
 
 
 
