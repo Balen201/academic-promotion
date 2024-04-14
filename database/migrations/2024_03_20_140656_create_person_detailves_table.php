@@ -16,7 +16,7 @@ return new class extends Migration
            $table->string('name');
            $table->string('college');
            $table->string('department');
-           $table->integer('number');
+           $table->string('number');
            $table->string('address');
            $table->string('play_zansti');
            $table->string('play_dawakraw');

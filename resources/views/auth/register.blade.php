@@ -1,64 +1,65 @@
 @extends('front.index')
 
 @section('navaka')
-    <div class="container-fluid d-flex justify-content-center align-items-center vh-100">
-        <div class="col-md-8">
-            <div class="p-5 border rounded mx-auto" style="max-width: 550px;">
-                <h2 class="text-center mb-4"><span class="text-danger">بەخێربێن</span>  تکایە خۆت تۆمار بکە</h2>
-                <form method="POST" action="{{ route('register') }}">
-                    @csrf
-                    <div class="mb-3">
-                        <label for="name" class="form-label">: ناو  </label>
-                        <input id="name" class="form-control @error('name') is-invalid @enderror" type="text" name="name" value="{{ old('name') }}" required autofocus autocomplete="name">
-                        @error('name')
-                            <div class="invalid-feedback">{{ $message }}</div>
-                        @enderror
+    <div class="bg-cover bg-center bg-no-repeat" style="background-image: url('../admin/img/bg.jpg')">
+        <div class="wrapper flex items-center justify-center min-h-screen">
+            <form class="bg-transparent shadow-md rounded-lg px-8 pt-6 pb-8 mb-4" style="background-color: rgba(255, 255, 255, 0.1); width: 28rem;" method="POST" action="{{ route('register') }}">
+                @csrf
+                <h1 class="text-3xl font-bold text-white text-center mb-4">تکایە خۆت تۆمار بکە</h1>
+                <div class="mb-6">
+                    <label for="name" class="block text-white text-sm font-bold mb-2">ناو</label>
+                    <input id="name" name="name" type="text" class="block w-full px-3 py-2 border rounded-md placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-transparent text-white @error('name') border-red-500 @enderror" placeholder="ناو" value="{{ old('name') }}" required autofocus>
+                    @error('name')
+                        <span class="text-red-500 text-sm">{{ $message }}</span>
+                    @enderror
+                </div>
+                <div class="mb-6">
+                    <label for="email" class="block text-white text-sm font-bold mb-2">ئیمەیڵ</label>
+                    <input id="email" name="email" type="email" class="block w-full px-3 py-2 border rounded-md placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-transparent text-white @error('email') border-red-500 @enderror" placeholder="ئیمەیڵ" value="{{ old('email') }}" required>
+                    @error('email')
+                        <span class="text-red-500 text-sm">{{ $message }}</span>
+                    @enderror
+                </div>
+                <div class="mb-6">
+                    <label for="department" class="block text-white text-sm font-bold mb-2">بەش</label>
+                    <select id="department" name="department" class="block w-full px-3 py-2 border rounded-md placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-transparent text-white @error('department') border-red-500 @enderror" required>
+                        <option value="" class="text-black">بەشێک هەڵبژێرە</option>
+                        <option value="bi" class="text-black">بایۆلۆجی</option>
+                        <option value="ch" class="text-black">کیمیا</option>
+                        <option value="ma" class="text-black">بیرکاری</option>
+                        <option value="ph" class="text-black">فیزیا</option>
+                        <option value="cs" class="text-black">کۆمپیوتەر</option>
+                        <option value="zh" class="text-black">ژینگە</option>
+                        <option value="ji" class="text-black">جیۆلۆجی</option>
+                    </select>
+
+                    @error('department')
+                        <span class="text-red-500 text-sm">{{ $message }}</span>
+                    @enderror
+                </div>
+                <div class="mb-6">
+                    <label for="password" class="block text-white text-sm font-bold mb-2">پاسوۆرد</label>
+                    <input id="password" name="password" type="password" class="block w-full px-3 py-2 border rounded-md placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-transparent text-white @error('password') border-red-500 @enderror" placeholder="پاسوۆرد" required autocomplete="new-password">
+                    @error('password')
+                        <span class="text-red-500 text-sm">{{ $message }}</span>
+                    @enderror
+                </div>
+                <div class="mb-6">
+                    <label for="password_confirmation" class="block text-white text-sm font-bold mb-2">دووبارەکردنەوەی پاسوۆرد</label>
+                    <input id="password_confirmation" name="password_confirmation" type="password" class="block w-full px-3 py-2 border rounded-md placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-transparent text-white @error('password_confirmation') border-red-500 @enderror" placeholder="دووبارەکردنەوەی پاسوۆرد" required autocomplete="new-password">
+                    @error('password_confirmation')
+                        <span class="text-red-500 text-sm">{{ $message }}</span>
+                    @enderror
+                </div>
+                <div class="mb-6 flex items-center justify-between">
+                    <div>
+                        <button type="submit" class="btn btn-primary">{{ __('خۆت تۆمار بکە') }}</button>
                     </div>
-                    <div class="mb-3">
-                        <label for="email" class="form-label"> : ئیمەیڵ   </label>
-                        <input id="email" class="form-control @error('email') is-invalid @enderror" type="email" name="email" value="{{ old('email') }}" required autocomplete="username">
-                        @error('email')
-                            <div class="invalid-feedback">{{ $message }}</div>
-                        @enderror
+                    <div>
+                        <a href="{{ route('login') }}" class="text-white text-sm hover:text-blue-300">{{ __('پێشتر خۆت تۆمارکردووە ؟ بڕۆ ژوورەوە') }}</a>
                     </div>
-                    <div class="mb-3">
-                        <label for="department" class="form-label"> : بەش</label>
-                        <select class="form-select @error('department') is-invalid @enderror" id="department" name="department">
-                            <option value="">بەشێک هەڵبژێرە</option>
-                            <option value="bi">بایۆلۆجی</option>
-                            <option value="ch">کیمیا</option>
-                            <option value="ma">بیرکاری</option>
-                            <option value="ph">فیزیا</option>
-                            <option value="cs">کۆمپیوتەر</option>
-                            <option value="zh">ژینگە</option>
-                            <option value="ji">جیۆلۆجی</option>
-                        </select>
-                        @error('department')
-                            <div class="invalid-feedback">{{ $message }}</div>
-                        @enderror
-                    </div>
-                    <div class="mb-3">
-                        <label for="password" class="form-label">: پاسوۆرد</label>
-                        <input id="password" class="form-control @error('password') is-invalid @enderror" type="password" name="password" required autocomplete="new-password">
-                        @error('password')
-                            <div class="invalid-feedback">{{ $message }}</div>
-                        @enderror
-                    </div>
-                    <div class="mb-3">
-                        <label for="password_confirmation" class="form-label">: دووبارەکردنەوەی پاسوۆڕد</label>
-                        <input id="password_confirmation" class="form-control @error('password_confirmation') is-invalid @enderror" type="password" name="password_confirmation" required autocomplete="new-password">
-                        @error('password_confirmation')
-                            <div class="invalid-feedback">{{ $message }}</div>
-                        @enderror
-                    </div>
-                    <div class="d-grid gap-2">
-                        <button type="submit" class="btn btn-primary">خۆت تۆمار بکە</button>
-                    </div>
-                    <div class="mt-3 text-center">
-                        <a href="{{ route('login') }}">پێشتر خۆت تۆمارکردووە ؟ بڕۆ ژوورەوە</a>
-                    </div>
-                </form>
-            </div>
+                </div>
+            </form>
         </div>
     </div>
 @endsection

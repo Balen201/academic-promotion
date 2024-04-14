@@ -27,7 +27,7 @@
             title: 'پیرۆزە',
             text: '{{ session('success') }}',
             showConfirmButton: false,
-            timer: 6000
+            timer: 5000
         });
     @endif
 </script>

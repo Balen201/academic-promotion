@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('andams', function (Blueprint $table) {
             $table->id();
             $table->string('sandica');
-            $table->integer('zhmaray_nasnama');
+            $table->string('zhmaray_nasnama');
             $table->string('barwari_andam');
             $table->foreignId('user_id')->constrained('users')->onUpdate('cascade');
 

@@ -559,8 +559,10 @@ public function contactStore(Request $request)
     $contact->comment = $request->comment;
     $contact->save();
 
+session()->flash('success', 'بۆ پێشنیارەکەت دڵنیابە بەرز دەینرخێنین ');
+
     // Redirect back with success message
-    return redirect()->back()->with('success', 'Feedback submitted successfully!');
+    return redirect()->back();
 }
 
 

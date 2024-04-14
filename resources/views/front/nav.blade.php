@@ -16,7 +16,7 @@
     <div class="container-fluid">
         <!-- Logo -->
         <div class="navbar-brand">
-            <img class="h-8 w-auto" src="https://banner2.cleanpng.com/20180513/ffw/kisspng-salahaddin-university-erbil-university-of-kurdista-5af8df4b053a60.9390221715262595310214.jpg" alt="Workflow">
+            <img class="h-8 w-auto" src="../admin/img/salahadin.jpg" alt="Workflow">
         </div>
         <!-- Toggler/collapsible Button -->
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">

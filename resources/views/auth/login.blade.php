@@ -1,42 +1,48 @@
 @extends('front.index')
 
 @section('navaka')
-    <div class="container-fluid d-flex justify-content-center align-items-center vh-100">
-        <div class="col-md-8">
-            <div class="p-5 border rounded mx-auto" style="max-width: 500px;">
-                @if (Session::has('generated_username'))
-                <div class="alert alert-success">
-                    Your automatically generated username: {{ Session::get('generated_username') }}
-                </div>
-                @endif
-                <h2 class="text-center mb-4">چوونەژوورەوە</h2>
-                <form method="POST" action="{{ route('login') }}">
-                    @csrf
-                    <div class="mb-3">
-                        <label for="username" class="form-label">{{ __('یوزەرنەیم') }}</label>
-                        <input id="username" class="form-control" type="text" name="username" value="{{ old('username') }}" required autofocus autocomplete="username">
-                        @error('username')
-                        <div class="text-danger">{{ $message }}</div>
-                        @enderror
-                    </div>
-                    <div class="mb-3">
-                        <label for="password" class="form-label">{{ __('پاسوۆڕد') }}</label>
-                        <input id="password" class="form-control" type="password" name="password" required autocomplete="current-password">
-                        @error('password')
-                        <div class="text-danger">{{ $message }}</div>
-                        @enderror
-                    </div>
-                    <div class="d-grid gap-2">
-                        <button type="submit" class="btn btn-primary">{{ __('چونەژوورەوە') }}</button>
-                    </div>
-                </form>
-                <div class="mt-3 text-center">
-                    <a href="{{ route('password.request') }}">{{ __('پاسوۆردت لەبیرکردووە') }}</a>
-                </div>
-                <div class="mt-3 text-center">
-                    <a href="{{ route('register') }}">خۆت تۆمار نەکردووە ؟ لێرە خۆت تۆمارکە</a>
+<div class="bg-cover bg-center bg-no-repeat" style="background-image: url('../admin/img/bg.jpg')">
+    <div class="wrapper flex items-center justify-center min-h-screen">
+        <form class="bg-transparent shadow-md rounded-lg px-8 pt-6 pb-8 mb-4" style="background-color: rgba(255, 255, 255, 0.1); width: 28rem;" method="POST" action="{{ route('login') }}">
+            @csrf
+            <h1 class="text-3xl font-bold text-white text-center mb-4">بەخێربێن بۆ  ماڵپەڕی بەرزکردنەوەی پلەی زانستی</h1>
+            @if (Session::has('generated_username'))
+            <div class="alert alert-success mb-4">
+                Your automatically generated username: {{ Session::get('generated_username') }}
+            </div>
+            @endif
+            <div class="mb-6">
+                <label for="username" class="block text-white text-sm font-bold mb-2">یوزەرنەیم</label>
+                <div class="relative">
+                    <input type="text" id="username" name="username" class="block w-full px-3 py-2 border rounded-md placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-transparent text-white @error('username') border-red-500 @enderror" placeholder="یوزەرنەیمت بنووسە" required>
+                    @error('username')
+                        <span class="text-red-500 text-sm">{{ $message }}</span>
+                    @enderror
+                    <i class="fas fa-user absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400"></i>
                 </div>
             </div>
-        </div>
+            <div class="mb-6">
+                <label for="password" class="block text-white text-sm font-bold mb-2">پاسوۆرد</label>
+                <div class="relative">
+                    <input type="password" id="password" name="password" class="block w-full px-3 py-2 border rounded-md placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-transparent text-white @error('password') border-red-500 @enderror" placeholder="پاسوۆردت بنوسە" required>
+                    @error('password')
+                        <span class="text-red-500 text-sm">{{ $message }}</span>
+                    @enderror
+                    <i class="fas fa-lock absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400"></i>
+                </div>
+            </div>
+            <div class="mb-6 flex items-center justify-between">
+                <label class="block text-white font-bold">
+                    <a class="text-white text-sm hover:text-blue-300" href="{{ route('password.request') }}">پاسوۆردت لەبیرکردوە ؟</a>
+                </label> <!-- Missing closing tag -->
+            </div>
+            <div class="flex items-center justify-center">
+                <button type="submit" class="bg-white hover:bg-gray-200 text-gray-800 font-bold py-2 px-4 rounded-full focus:outline-none focus:shadow-outline w-full">چوونەژوورەوە</button>
+            </div>
+            <p class="text-white text-sm mt-4 text-center">
+                ئەکاونتت نییە ؟ <a href="{{ route('register') }}" class="text-blue-500">خۆت تۆمار بکە</a>
+            </p>
+        </form>
     </div>
-@endsection
+</div>
+@endsection 
