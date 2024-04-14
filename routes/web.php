@@ -22,10 +22,6 @@ Route::get('/dashboard', function () {
 Route::middleware(['auth'])->group(function () {
     Route::get('/dash', [AdminController::class, 'index'])->name('admin.index');
 
-
-
-
-
     Route::get('/showtime', [AdminController::class, 'form'])->name('form');
     Route::get('/home/data', [AdminController::class, 'datas'])->name('homedash');
     Route::get('/user/data', [AdminController::class, 'userdata'])->name('userdata');
