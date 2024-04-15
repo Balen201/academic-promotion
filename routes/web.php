@@ -10,7 +10,7 @@ use App\Http\Controllers\AdminController;
 
 
 Route::get('/', function () {
-    return view('dashboard');
+    return view('login');
 });
 
 Route::get('/dashboard', function () {

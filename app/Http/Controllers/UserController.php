@@ -124,8 +124,6 @@ $xwendn->user_id =$id;
 $xwendn->la = $request->la;
 $xwendn->takw = $request->takw;
 
-
-
 $xwendn->brwanama = $request->brwanama;
 
 
