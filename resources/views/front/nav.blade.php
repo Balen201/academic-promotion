@@ -7,6 +7,8 @@
     <title>Document</title>
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Tailwind CSS (Production version) -->
+    <link href="https://unpkg.com/tailwindcss@^3.0/dist/tailwind.min.css" rel="stylesheet">
     <!-- SweetAlert CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.min.css">
 </head>
@@ -16,7 +18,7 @@
     <div class="container-fluid">
         <!-- Logo -->
         <div class="navbar-brand">
-            <img class="h-8 w-auto" src="../admin/img/salahadin.jpg" alt="Workflow">
+            <img class="h-12 w-16" src="../admin/img/salah.png" alt="Workflow">
         </div>
         <!-- Toggler/collapsible Button -->
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -27,13 +29,13 @@
             <!-- Centered Links -->
             <ul class="navbar-nav mb-2 mb-lg-0 mx-auto">
                 <li class="nav-item">
-                    <a class="nav-link text-white " href="{{ route('dashboard') }}">سەرەکی</a>
+                    <a class="nav-link text-white" href="{{ route('dashboard') }}">سەرەکی</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-white " href="{{ route('personal.showone') }}">پێشکەشکردن</a>
+                    <a class="nav-link text-white" href="{{ route('personal.showone') }}">پێشکەشکردن</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-white " href="{{ route('contact') }}">داواکاری</a>
+                    <a class="nav-link text-white" href="{{ route('contact') }}">داواکاری</a>
                 </li>
             </ul>
             <!-- Logout Link -->
@@ -53,7 +55,6 @@
                     </li>
                 @endauth
             </ul>
-
         </div>
     </div>
 </nav>

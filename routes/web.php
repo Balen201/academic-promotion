@@ -52,8 +52,7 @@ Route::middleware(['auth'])->group(function () {
 
 
 
-Route::middleware(['auth', 'verified'])->group(function () {
-    Route::controller(UserController::class)->except('destroy');
+Route::controller(UserController::class)->group(function () {
     Route::get('/user/logout', 'destroy')->name('user.logout');
     Route::get('/personal/step/one', 'show')->name('personal.showone');
     Route::get('/personal/step/yakwniw', 'getdwam');

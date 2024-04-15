@@ -488,7 +488,7 @@
                     @csrf
                     @method('POST')
 
-                    @if($user->status == '')
+                    @if($user->status == 'pending')
                         <button type="submit" formaction="{{ route('acceptStatus', $user->id) }}" class="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline mr-4">Accept</button>
                         <button type="submit" formaction="{{ route('rejectStatus', $user->id) }}" class="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Reject</button>
                     @elseif($user->status == 'accepted')
