@@ -29,6 +29,10 @@
             <!-- Centered Links -->
             <ul class="navbar-nav mb-2 mb-lg-0 mx-auto">
 
+   
+
+
+
 
                     @auth <!-- Check if the user is authenticated -->
                     <li class="nav-item">
