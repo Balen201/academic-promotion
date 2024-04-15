@@ -28,16 +28,33 @@
         <div class="collapse navbar-collapse justify-content-between" id="navbarSupportedContent">
             <!-- Centered Links -->
             <ul class="navbar-nav mb-2 mb-lg-0 mx-auto">
-                <li class="nav-item">
-                    <a class="nav-link text-white" href="{{ route('dashboard') }}">سەرەکی</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link text-white" href="{{ route('personal.showone') }}">پێشکەشکردن</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link text-white" href="{{ route('contact') }}">داواکاری</a>
-                </li>
-            </ul>
+
+
+                    @auth <!-- Check if the user is authenticated -->
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="{{ route('dashboard') }}">سەرەکی</a>
+                    </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="{{ route('personal.showone') }}">پێشکەشکردن</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="{{ route('contact') }}">داواکاری</a>
+                        </li>
+                    @else <!-- If the user is not authenticated -->
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="{{ route('dashboard') }}">سەرەکی</a>
+                    </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="{{ route('login') }}">پێشکەشکردن</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="{{ route('login') }}">داواکاری</a>
+                        </li>
+                    @endauth
+                </ul>
+
+
             <!-- Logout Link -->
             <ul class="navbar-nav">
                 @auth
